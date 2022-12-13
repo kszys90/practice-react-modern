@@ -1,13 +1,16 @@
 // ./src/components/Div.js
-import React from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable react/function-component-definition */
+// ./src/components/Box.js
+import React, { useContext } from 'react';
+import TextContext from '../contex';
 
-const Div = props => {
-    const { title } = props;
+const Div = () => {
+
+    const context = useContext(TextContext)
 
     return (
         <div>
-            <h1>{title}</h1>
+            <h1>{context.text}</h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia, justo et posuere viverra,
                 ligula turpis egestas nisi, id iaculis augue ex non nisi. Class aptent taciti sociosqu ad litora
@@ -17,10 +20,7 @@ const Div = props => {
             </p>
         </div>
     );
-};
+}
 
-Div.propTypes = {
-    title: PropTypes.string.isRequired,
-};
 
 export default Div;

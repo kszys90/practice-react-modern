@@ -1,9 +1,10 @@
 // ./src/components/Box.js
 import React from 'react';
 import Div from './Div';
+// import { ColorContext, TextContext } from '../context';
 
-const Box = () => {
+function Box() {
     return <Div />;
-};
+}
 
 export default Box;
