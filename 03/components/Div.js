@@ -1,16 +1,16 @@
 // ./src/components/Div.js
 import React, { useContext } from 'react';
-import { TextContext } from '../context';
+import { ColorContext, TextContext } from '../context';
 
 function Div() {
-    // const theme = useContext(ColorContext)
+    const theme = useContext(ColorContext)
     const content = useContext(TextContext)
-    // const style = {
-    //     color: theme.primaryColor
-    // }
+    const style = {
+        border: `1px solid ${theme.color}`,
+    }
 
     return (
-        <div>
+        <div style={style}>
             <h1>{content.text} </h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia, justo et posuere viverra,

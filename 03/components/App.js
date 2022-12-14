@@ -2,22 +2,23 @@
 import React from 'react';
 import Box from './Box';
 import Div from './Div';
+// eslint-disable-next-line no-unused-vars
 import { ColorContext, TextContext } from '../context';
 
 // eslint-disable-next-line react/function-component-definition
-const App = () => (
-
-
-    <ColorContext.Provider value={ColorContext}>
+const App = () => {
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
+    const customText = {
+        text: 'sibling'
+    }
+    return (
         <section>
-            <Box />
-            {            // eslint-disable-next-line react/jsx-no-constructed-context-values
-            }            <TextContext.Provider value={{ text: 'sibling' }}>
-
-                <Div />
+            <TextContext.Provider value={customText}>
+                <Box />
             </TextContext.Provider>
+            <Div />
         </section>
-    </ColorContext.Provider>
-)
+    )
+}
 
 export default App;
